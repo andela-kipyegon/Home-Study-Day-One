@@ -1,9 +1,11 @@
+# car class
 class Car(object):
 
 	 # created the class car and define the constructor for the class car 
 
 	def __init__(self,Car_name='General',Car_model='GM',Type = 'saloon'):
 
+		#initialized all the variables in class
 		self.name = Car_name
 		self.model = Car_model
 		self.car_type = Type
@@ -24,13 +26,16 @@ class Car(object):
 			return True
 		else:
 			return False
-	def drive(self, desired_speed):
-		if (self.car_type == 'trailer'):
-			self.speed = desired_speed * 11
+	# this is the method for driving
+	def drive(self,speeds):
+		if (self.car_type != 'trailer'):
+			if(speeds !=0):
+				speeding = (10 ** speeds)
+			else:
+				speeding = 10 * speeds
+				return self
+			self.speed = speeding
 			return self
 		else:
-			if(desired_speed !=0):
-				self.speed = 10 ** desired_speed
-			else:
-				self.speed = 10 * desired_speed
-				return self
+			self.speed = speeds * 11
+			return self
