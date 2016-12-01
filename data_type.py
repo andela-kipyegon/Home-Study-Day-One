@@ -13,7 +13,7 @@ def data_type(arg):
       return 'more than 100'
     else:
       return 'equal to 100'
-  if isinstance(arg,list) and len(arg)>3 :
+  if isinstance(arg,list) and len(arg)=>3 :
       return arg[2]
   else:
       None
